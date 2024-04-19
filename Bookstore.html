@@ -1,0 +1,607 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Bookworld- ChapterVerse</title>
+ <style>
+ body {
+ margin: 0;
+ padding: 0;
+ font-family: Arial, sans-serif;
+ background-color: #f5f5f5;
+ }
+ header {
+ background-color:#468fb9;
+ color: #ffffff;
+ padding: 20px 0;
+ text-align: center;
+ }
+ header h1 {
+ margin: 0;
+ font-size: 36px;
+ }
+ nav {
+ background-color:#468fb9;
+ color: #ffffff;
+ padding: 10px 0;
+ text-align: center;
+ }
+ nav ul {
+ list-style: none;
+ padding: 0;
+ margin: 0;
+ }
+ nav ul li {
+ display: inline;
+ margin-right: 20px;
+ }
+ nav ul li a {
+ color: #ffffff;
+ text-decoration: none;
+ font-size: 18px;
+ transition: color 0.3s ease;
+ }
+ nav ul li a:hover {
+ color: #cccccc;
+ }
+ .banner {
+ height: 400px;
+ position: relative;
+ margin-bottom: 30px;
+ overflow: hidden;
+ }
+ .banner-container {
+ display: flex;
+ transition: transform 0.5s ease;
+ }
+ .banner-image {
+ flex: 0 0 100%;
+ }
+ .banner-image img {
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+ }
+ .scroll-arrows {
+ position: absolute;
+ bottom: 20px;
+ left: 50%;
+ transform: translateX(-50%);
+ z-index: 1;
+ }
+ .scroll-arrow {
+ display: inline-block;
+ width: 50px;
+ height: 50px;
+ background-color: rgba(255, 255, 255, 0.5);
+ border-radius: 50%;
+ cursor: pointer;
+ margin: 0 10px;
+ transition: background-color 0.3s ease;
+ }
+ .scroll-arrow:hover {
+ background-color: rgba(255, 255, 255, 0.8);
+ }
+ .scroll-arrow img {
+ width: 30px;
+ height: 30px;
+ margin-top: 10px;
+ margin-left: 10px;
+ }
+ .featured-books {
+ text-align: center;
+ margin-bottom: 30px;
+ }
+ .featured-books h2 {
+ font-size: 32px;
+ margin-bottom: 20px;
+ color: #468fb9;
+ }
+ .book-container {
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+ }
+ .book {
+ width: 200px;
+ margin: 0 20px 20px 20px;
+ background-color: #ffffff;
+ padding: 15px;
+ border-radius: 10px;
+ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ transition: transform 0.3s ease;
+ }
+ .book:hover {
+ transform: translateY(-5px);
+ }
+ .book img {
+ max-width: 100%;
+ height: auto;
+ border-radius: 5px;
+ }
+ .book h3 {
+ font-size: 18px;
+ margin-top: 10px;
+ color: #468fb9;
+ }
+ .book p {
+ font-size: 14px;
+ color: #666666;
+ }
+ .why-use-section {
+ background-color:#468fb9;
+ color: #ffffff;
+ padding: 50px 0;
+ text-align: center;
+ }
+ .why-use-section h2 {
+ font-size: 36px;
+ margin-bottom: 20px;
+ }
+ .why-use-container {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-wrap: wrap;
+ }
+ .why-use-item {
+ flex: 1;
+ padding: 20px;
+ max-width: 300px;
+ margin: 20px;
+ border-radius: 10px;
+ background-color: #333333;
+ transition: transform 0.3s ease;
+ }
+ .why-use-item:hover {
+ transform: translateY(-5px);
+ }
+ .why-use-item h3 {
+ font-size: 24px;
+ margin-bottom: 10px;
+ }
+ .why-use-item p {
+ font-size: 16px;
+ color: #ffffff;
+ }
+ .footer {
+ background-color:#;
+ color: #ffffff;
+ text-align: center;
+ padding: 20px 0;
+ position: fixed;
+ bottom: 0;
+ width: 100%;
+ }
+ </style>
+</head>
+<body>
+ <header>
+ <h1>ChapterVerse</h1>
+ <p>"Where Every Page Tells a Story"</p>
+ </header>
+ <nav>
+ <ul>
+ <li><a href="#">Home</a></li>
+ <li><a href="#">Books</a></li>
+ <li><a href="#">Genres</a></li>
+ <li><a href="#">About Us</a></li>
+ <li><a href="#">Contact</a></li>
+ </ul>
+ </nav>
+ <div class="banner">
+ <div class="banner-container">
+ <div class="banner-image">
+ <img src="https://miro.medium.com/v2/resize:fit:1200/1*S81O15rjKfG-BFdnNC6-GQ.jpeg" alt="Image 1">
+ </div>
+ <div class="banner-image">
+ <img src="https://images-cdn.reedsy.com/discovery/post/109/featured_image/medium_aa7b8fcc4ee3a86626aca3157bbd8d697c38429a.jpg" alt="Image 2">
+ </div>
+ <div class="banner-image">
+ <img src="" alt="Image 3">
+ </div>
+ </div>
+ <div class="scroll-arrows">
+ <div class="scroll-arrow" id="prev">
+ <img src="C:\Users\a2z\Downloads\less.png" alt="Left Arrow">
+ </div>
+ <div class="scroll-arrow" id="next">
+ <img src="C:\Users\a2z\Downloads\greater.png" alt="Right Arrow">
+ </div>
+ </div>
+ </div>
+
+
+ <div class="why-use-section">
+    <h2>Why Us?</h2>
+    <div class="why-use-container">
+        <div class="why-use-item">
+            <h3>Extensive Collection</h3>
+            <p>Dive into our vast library spanning diverse genres.</p>
+        </div>
+        <div class="why-use-item">
+            <h3>Unbeatable Deals</h3>
+            <p>Discover incredible discounts on both new and pre-loved books.</p>
+        </div>
+        <div class="why-use-item">
+            <h3>Easy Shopping</h3>
+            <p>Experience hassle-free browsing and secure checkout from anywhere.</p>
+        </div>
+    </div>
+</div>
+
+
+ <div class="footer">
+ <p>&copy; 2024 Bookclub. All Rights Reserved.</p>
+ </div>
+ <script>
+ const prevBtn = document.getElementById('prev');
+ const nextBtn = document.getElementById('next');
+ const bannerContainer = document.querySelector('.banner-container');
+ let currentIndex = 0;
+ const images = document.querySelectorAll('.banner-image');
+ nextBtn.addEventListener('click', () => {
+ currentIndex++;
+ if (currentIndex >= images.length) {
+ currentIndex = 0;
+ }
+ updateBanner();
+ });
+ prevBtn.addEventListener('click', () => {
+ currentIndex--;
+ if (currentIndex < 0) {
+ currentIndex = images.length - 1;
+ }
+ updateBanner();
+ });
+ function updateBanner() {
+ const offset = -currentIndex * 100;
+ bannerContainer.style.transform = `translateX(${offset}%)`;
+ }
+ </script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+<style>
+body {
+ font-family: "Poppins", sans-serif;
+ background-color: #f5f5f5;
+ margin: 0;
+ padding: 0;
+}
+.container {
+ position: relative; /* Added for positioning close button */
+ width: 400px;
+ margin: 80px auto;
+ background-color: #fff;
+ border-radius: 8px;
+ box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+ padding: 40px;
+ box-sizing: border-box;
+}
+.close-button {
+ position: absolute;
+ top: 10px;
+ right: 10px;
+ cursor: pointer;
+}
+h2 {
+ text-align: center;
+ margin-bottom: 30px;
+ color: #333;
+}
+form {
+ display: flex;
+ flex-direction: column;
+}
+input[type="text"],
+input[type="password"] {
+ margin-bottom: 20px;
+ padding: 10px;
+ border: 1px solid #ccc;
+ border-radius: 5px;
+ font-size: 16px;
+}
+input[type="submit"] {
+ padding: 10px;
+ border: none;
+ border-radius: 5px;
+ background-color: #007bff;
+ color: #fff;
+ font-size: 16px;
+ cursor: pointer;
+}
+input[type="submit"]:hover {
+ background-color: #0056b3;
+}
+.forgot-password {
+ text-align: center;
+ margin-top: 10px;
+ color: #007bff;
+ cursor: pointer;
+}
+.create-account {
+ text-align: center;
+ margin-top: 20px;
+ color: #333;
+}
+.create-account a {
+ color: #007bff;
+ text-decoration: none;
+ font-weight: bold;
+}
+.create-account a:hover {
+ text-decoration: underline;
+}
+.error-message {
+ color: #dc3545;
+ margin-bottom: 10px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+ <a href="C:\Users\a2z\OneDrive\Desktop\snehal\main project\project.html"
+class="close-button"><img src="C:\Users\a2z\Downloads\closebutton.png"
+alt="Close" width="20" height="20"></a> <!-- Added close button -->
+ <h2>Login</h2>
+ <form id="loginForm" onsubmit="return validateForm()">
+ <input type="text" id="username" name="username" placeholder="Username"
+required>
+ <input type="password" id="password" name="password"
+placeholder="Password" required>
+ <input type="submit" value="Sign In">
+ <div class="error-message" id="errorMessage"></div>
+ </form>
+ <div class="forgot-password" onclick="forgotPassword()">Forgot
+Password?</div>
+ <div class="create-account">Don't have an account? <a href="#">Create
+Account</a></div>
+</div>
+<script>
+function validateForm() {
+ var username = document.getElementById("username").value;
+ var password = document.getElementById("password").value;
+ if (username === "" || password === "") {
+ document.getElementById("errorMessage").innerHTML = "Please enter both
+username and password.";
+ return false;
+ }
+ // Additional validation can be added here if needed
+ return true;
+}
+function forgotPassword() {
+ alert("Forgot Password functionality will be implemented here.");
+}
+</script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Book Store</title>
+ <style>
+ body {
+ background-color:bisque;
+ font-family: "Poppins", sans-serif;
+ margin: 0;
+ padding: 0;
+ }
+ .container {
+ max-width: 960px;
+ margin: 0 auto;
+ padding: 20px;
+ }
+ .books {
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: space-between;
+ }
+ .book {
+ width: calc(33.33% - 20px);
+ margin-bottom: 20px;
+ padding: 10px;
+ border: 1px solid #ccc;
+ box-sizing: border-box;
+ }
+ .book img {
+ max-width: 100%;
+ height: auto;
+ }
+ .book-title {
+ font-weight: bold;
+ margin-top: 10px;
+ }
+ .add-to-cart {
+ display: inline-block;
+ background-color: #4CAF50;
+ color: white;
+ padding: 8px 16px;
+ text-align: center;
+ text-decoration: none;
+ font-size: 16px;
+ margin-top: 10px;
+ cursor: pointer;
+ }
+ .add-to-cart:hover {
+ background-color: #45a049;
+ }
+ </style>
+</head>
+<body>
+ <div class="container">
+ <h1>Welcome to our Book Store</h1>
+ <div class="books">
+ <div class="book">
+ <img src="https://s26162.pcdn.co/wp-content/uploads/2021/10/3b47d124002685f2a3c67e47383232c7.jpg" alt="Book 1" >
+ <div class="book-title">Book 1</div>
+ <h3>34.6$</h3>
+ <button class="add-to-cart" onclick="addToCart('add1')">Add to
+Cart</button>
+ </div>
+ <div class="book">
+ <img src="https://s26162.pcdn.co/wp-content/uploads/2021/10/bravenewworld.jpg" alt="Book 2" height="100">
+ <div class="book-title">Book 2</div>
+ <h3>12.99$</h3>
+ <button class="add-to-cart" onclick="addToCart('addbook2')">Add to
+Cart</button>
+ </div>
+ <div class="book">
+ <img src="https://s26162.pcdn.co/wp-content/uploads/2021/10/The-Catcher-in-the-Rye-First-Edition-cover-E.-Michael-Mitchell.jpg" alt="Book 3">
+ <div class="book-title">Book 3</div>
+ <h3>22.78$</h3>
+ <button class="add-to-cart" onclick="addToCart('addbook3')">Add to
+Cart</button>
+ </div>
+ <div class="book">
+ <img src="https://s26162.pcdn.co/wp-content/uploads/2018/10/invisibleman-1509049531-640x996.jpg" alt="Book 3">
+ <div class="book-title">Book 4</div>
+ <h3>44$</h3>
+ <button class="add-to-cart" onclick="addToCart('addbook4')">Add to
+Cart</button>
+ </div>
+ <div class="book">
+ <img src="https://s26162.pcdn.co/wp-content/uploads/2021/10/lf-1-1.jpg" alt="Book 3">
+ <div class="book-title">Book 5</div>
+ <h3>56.45$</h3>
+ <button class="add-to-cart" onclick="addToCart('addbook5')">Add to
+Cart</button>
+ </div>
+ <div class="book">
+ <img src="https://s26162.pcdn.co/wp-content/uploads/2021/10/To_Kill_a_Mockingbird_first_edition_cover.jpg" alt="Book 3">
+ <div class="book-title">Book 6</div>
+ <h3>55.5$</h3>
+ <button class="add-to-cart" onclick="addToCart('addbook6')">Add to
+Cart</button>
+ </div>
+ <!-- Repeat similar structure for more books -->
+ </div>
+ </div>
+ <script>
+ function addToCart(bookName) {
+ // Simulate adding to cart by alerting the book name
+ alert(bookName + " added to cart!");
+ }
+ </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Online Bookstore Registration</title>
+ <style>
+ body {
+ font-family: "Poppins", sans-serif;
+ margin: 0;
+ padding: 0;
+ background-color: #f4f4f4;
+ }
+ .container {
+ max-width: 800px;
+ margin: 20px auto;
+ padding: 20px;
+ background-color: #fff;
+ border-radius: 8px;
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ }
+ h1 {
+ text-align: center;
+ }
+ form {
+ margin-top: 20px;
+ }
+ .form-group {
+ margin-bottom: 20px;
+ }
+ label {
+ display: block;
+ font-weight: bold;
+ }
+ input[type="text"],
+ input[type="email"],
+ input[type="password"],
+ select {
+ width: 100%;
+ padding: 10px;
+ border: 1px solid #ccc;
+ border-radius: 4px;
+ }
+ button {
+ background-color: #4caf50;
+ color: white;
+ padding: 10px 20px;
+ border: none;
+ border-radius: 4px;
+ cursor: pointer;
+ font-size: 16px;
+ }
+ button:hover {
+ background-color: #45a049;
+ }
+ nav {
+ background-color: #333;
+ color: #fff;
+ padding: 10px 0;
+ text-align: center;
+ }
+ nav a {
+ color: #fff;
+ text-decoration: none;
+ margin: 0 10px;
+ }
+ </style>
+</head>
+<body>
+ <h1>Welcome to our Bookstore</h1>
+<nav>
+ <a href="#">Home</a>
+ <a href="#">Contact</a>
+ <a href="#">Books</a>
+ <a href="#">Details</a>
+</nav>
+<div class="container">
+ <h1>Register for Online Bookstore</h1>
+ <form>
+ <div class="form-group">
+ <label for="name">Name:</label>
+ <input type="text" id="name" name="name" required>
+ </div>
+ <div class="form-group">
+ <label for="email">Email:</label>
+ <input type="email" id="email" name="email" required>
+ </div>
+ <div class="form-group">
+ <label for="password">Password:</label>
+ <input type="password" id="password" name="password" required>
+ </div>
+ <div class="form-group">
+ <label for="book-type">Book Type:</label>
+ <select id="book-type" name="book-type">
+ <option value="fiction">Fiction</option>
+ <option value="non-fiction">Non-Fiction</option>
+ <option value="biography">Biography</option>
+ <!-- Add more options as needed -->
+ </select>
+ </div>
+ <button type="submit">Register</button>
+ </form>
+</div>
+</body>
+</html>
+
